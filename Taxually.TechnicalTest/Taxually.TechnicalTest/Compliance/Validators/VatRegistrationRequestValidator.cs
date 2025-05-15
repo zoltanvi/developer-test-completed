@@ -4,6 +4,11 @@ namespace Taxually.TechnicalTest.Compliance.Validators;
 
 public class VatRegistrationRequestValidator : IVatRegistrationRequestValidator
 {
+    public const string CompanyNameMissingError = $"{nameof(VatRegistrationRequest.CompanyName)} is required.";
+    public const string CompanyIdMissingError = $"{nameof(VatRegistrationRequest.CompanyId)} is required.";
+    public const string CountryMissingError = $"{nameof(VatRegistrationRequest.Country)} is required.";
+    public const string CountryWrongFormatError = $"{nameof(VatRegistrationRequest.Country)} must be a 2-letter code.";
+
     public List<string> Validate(VatRegistrationRequest request)
     {
         // By default, asp.net core model binding creates an instance so this won't throw
@@ -13,21 +18,21 @@ public class VatRegistrationRequestValidator : IVatRegistrationRequestValidator
 
         if (string.IsNullOrWhiteSpace(request.CompanyName))
         {
-            errors.Add($"{nameof(request.CompanyName)} is required.");
+            errors.Add(CompanyNameMissingError);
         }
 
         if (string.IsNullOrWhiteSpace(request.CompanyId))
         {
-            errors.Add($"{nameof(request.CompanyId)} is required.");
+            errors.Add(CompanyIdMissingError);
         }
 
         if (string.IsNullOrWhiteSpace(request.Country))
         {
-            errors.Add($"{nameof(request.Country)} is required.");
+            errors.Add(CountryMissingError);
         }
         else if (request.Country.Length != 2)
         {
-            errors.Add("Country must be a 2-letter code.");
+            errors.Add(CountryWrongFormatError);
         }
 
         return errors;
