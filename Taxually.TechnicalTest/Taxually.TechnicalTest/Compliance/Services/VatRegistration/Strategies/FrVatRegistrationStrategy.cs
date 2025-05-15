@@ -1,8 +1,8 @@
 ﻿using System.Text;
 using Taxually.TechnicalTest.Clients;
-using Taxually.TechnicalTest.Models.Requests;
+using Taxually.TechnicalTest.Compliance.Models.Requests;
 
-namespace Taxually.TechnicalTest.Services.Strategies;
+namespace Taxually.TechnicalTest.Compliance.Services.VatRegistration.Strategies;
 
 public class FrVatRegistrationStrategy : IVatRegistrationStrategy
 {

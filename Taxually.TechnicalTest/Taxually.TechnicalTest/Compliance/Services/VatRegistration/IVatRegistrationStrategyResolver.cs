@@ -1,7 +1,7 @@
-﻿using Taxually.TechnicalTest.Models.Requests;
-using Taxually.TechnicalTest.Services.Strategies;
+﻿using Taxually.TechnicalTest.Compliance.Models.Requests;
+using Taxually.TechnicalTest.Compliance.Services.VatRegistration.Strategies;
 
-namespace Taxually.TechnicalTest.Services;
+namespace Taxually.TechnicalTest.Compliance.Services.VatRegistration;
 
 public interface IVatRegistrationStrategyResolver
 {

@@ -1,6 +1,6 @@
-﻿using Taxually.TechnicalTest.Services.Strategies;
+﻿using Taxually.TechnicalTest.Compliance.Services.VatRegistration.Strategies;
 
-namespace Taxually.TechnicalTest.Services;
+namespace Taxually.TechnicalTest.Compliance.Services.VatRegistration;
 
 public static class VatRegistrationServiceCollectionExtensions
 {

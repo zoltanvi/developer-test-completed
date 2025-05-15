@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Taxually.TechnicalTest.Models.Requests;
-using Taxually.TechnicalTest.Services;
+using Taxually.TechnicalTest.Compliance.Models.Requests;
+using Taxually.TechnicalTest.Compliance.Services.VatRegistration;
 
-namespace Taxually.TechnicalTest.Controllers;
+namespace Taxually.TechnicalTest.Compliance.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]

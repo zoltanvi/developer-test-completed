@@ -1,5 +1,5 @@
 using Taxually.TechnicalTest.Clients;
-using Taxually.TechnicalTest.Services;
+using Taxually.TechnicalTest.Compliance;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddClients();
-builder.Services.AddVatRegistrationServices();
+builder.Services.AddComplianceModule();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
