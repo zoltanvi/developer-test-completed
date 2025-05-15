@@ -1,5 +1,20 @@
 # Taxually technical test
 
+## Solution
+
+The main changes in this refactor:
+
+- Structure the solution into modules: The `Clients` folder and the `Compliance` folder could be extracted into separate modules, if we want to switch to modular monolith or microservices architecture in the future
+- Introduce strategy pattern for the registration that can be easily extended
+- Add model validation for the request
+- Add middleware to hide exception details from users if an unhandled exception occurs
+- Add placeholders for logging
+- Add unit tests
+
+---
+
+### Description
+
 This solution contains an [API endpoint](https://github.com/Taxually/developer-test/blob/main/Taxually.TechnicalTest/Taxually.TechnicalTest/Controllers/VatRegistrationController.cs) to register a company for a VAT number. Different approaches are required based on the country where the company is based:
 
 - UK companies can register via an API
