@@ -1,11 +1,10 @@
-﻿namespace Taxually.TechnicalTest
+﻿namespace Taxually.TechnicalTest;
+
+public class TaxuallyHttpClient : ITaxuallyHttpClient
 {
-    public class TaxuallyHttpClient
+    public Task PostAsync<TRequest>(string url, TRequest request)
     {
-        public Task PostAsync<TRequest>(string url, TRequest request)
-        {
-            // Actual HTTP call removed for purposes of this exercise
-            return Task.CompletedTask;
-        }
+        // Actual HTTP call removed for purposes of this exercise
+        return Task.CompletedTask;
     }
 }
