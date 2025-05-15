@@ -1,5 +1,6 @@
 using Taxually.TechnicalTest.Clients;
 using Taxually.TechnicalTest.Compliance;
+using Taxually.TechnicalTest.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+app.UseMiddleware<UnhandledExceptionHandlingMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
