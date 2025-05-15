@@ -21,6 +21,8 @@ public class FrVatRegistrationStrategy : IVatRegistrationStrategy
         csvBuilder.AppendLine("CompanyName,CompanyId");
         csvBuilder.AppendLine($"{request.CompanyName},{request.CompanyId}");
         var csv = Encoding.UTF8.GetBytes(csvBuilder.ToString());
+
+        // Log this action
         await _queueClient.EnqueueAsync(QueueName, csv);
     }
 }

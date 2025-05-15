@@ -16,6 +16,7 @@ public class GbVatRegistrationStrategy : IVatRegistrationStrategy
     // UK has an API to register for a VAT number
     public async Task RegisterAsync(VatRegistrationRequest request)
     {
+        // Log this action
         await _httpClient.PostAsync(Url, request);
     }
 }

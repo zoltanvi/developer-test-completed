@@ -9,13 +9,13 @@ namespace Taxually.TechnicalTest.Compliance.Controllers;
 [ApiController]
 public class VatRegistrationController : ControllerBase
 {
-    private readonly IVatRegistrationStrategyResolver _strategyResolver;
+    private readonly IVatRegistrationStrategyResolver _vatRegistrationStrategyResolver;
 
-    public VatRegistrationController(IVatRegistrationStrategyResolver strategyResolver)
+    public VatRegistrationController(IVatRegistrationStrategyResolver vatRegistrationStrategyResolver)
     {
-        ArgumentNullException.ThrowIfNull(strategyResolver);
+        ArgumentNullException.ThrowIfNull(vatRegistrationStrategyResolver);
 
-        _strategyResolver = strategyResolver;
+        _vatRegistrationStrategyResolver = vatRegistrationStrategyResolver;
     }
 
     /// <summary>
@@ -41,7 +41,7 @@ public class VatRegistrationController : ControllerBase
 
         try
         {
-            var strategy = _strategyResolver.Resolve(request);
+            var strategy = _vatRegistrationStrategyResolver.Resolve(request);
             await strategy.RegisterAsync(request);
         }
         catch (NotSupportedException ex)
@@ -52,6 +52,8 @@ public class VatRegistrationController : ControllerBase
                 Detail = ex.Message
             });
         }
+
+        // Unhandled exceptions are cached by UnhandledExceptionHandlingMiddleware
 
         return Ok();
     }

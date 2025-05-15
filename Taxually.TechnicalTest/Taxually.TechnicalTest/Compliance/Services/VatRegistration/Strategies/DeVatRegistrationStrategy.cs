@@ -21,6 +21,8 @@ public class DeVatRegistrationStrategy : IVatRegistrationStrategy
         var serializer = new XmlSerializer(typeof(VatRegistrationRequest));
         serializer.Serialize(stringWriter, request);
         var xml = stringWriter.ToString();
+
+        // Log this action
         await _queueClient.EnqueueAsync(QueueName, xml);
     }
 }
