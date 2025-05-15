@@ -1,5 +1,4 @@
-﻿
-namespace Taxually.TechnicalTest;
+﻿namespace Taxually.TechnicalTest.Clients;
 
 public interface ITaxuallyQueueClient
 {

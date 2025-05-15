@@ -1,4 +1,4 @@
-﻿namespace Taxually.TechnicalTest;
+﻿namespace Taxually.TechnicalTest.Clients;
 
 public class TaxuallyHttpClient : ITaxuallyHttpClient
 {
