@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Taxually.TechnicalTest.Compliance.Constants;
 using Taxually.TechnicalTest.Compliance.Models.Requests;
 using Taxually.TechnicalTest.Compliance.Services.VatRegistration;
 using Taxually.TechnicalTest.Compliance.Validators;
@@ -34,7 +35,7 @@ public class VatRegistrationController : ControllerBase
         {
             return BadRequest(new ValidationProblemDetails
             {
-                Title = "Validation Failed",
+                Title = ErrorMessages.ValidationFailedTitle,
                 Errors = { ["ValidationErrors"] = errors.ToArray() }
             });
         }
@@ -48,7 +49,7 @@ public class VatRegistrationController : ControllerBase
         {
             return BadRequest(new ProblemDetails
             {
-                Title = "Unsupported Country Code",
+                Title = ErrorMessages.UnsupportedCountryCodeTitle,
                 Detail = ex.Message
             });
         }
